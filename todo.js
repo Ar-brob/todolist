@@ -37,5 +37,16 @@ document.getElementById('klick') .addEventListener ('click', (event) => {
              nit.classList = 'lightnit'
               klick.classList = 'klick-day'
     }
-}
-)
+})
+document.getElementById ('open').addEventListener ('click', (iviv) =>{
+    iviv.preventDefault()
+    wind.style.display  = 'flex'
+    temo.style.display = 'block'
+}) 
+document.getElementById ('closer').addEventListener ('click', (ivive) =>{
+    ivive.preventDefault()
+    wind.style.display  = 'none'
+    temo.style.display = 'none'
+})
+
+
