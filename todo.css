@@ -1,0 +1,139 @@
+h1 {
+    text-align: center;
+}
+#poisk  {
+    border: none;
+    border-radius: 5px;
+    width: 595px;
+    height: 35px;
+    position: relative;
+    
+}
+.bright {
+    background-color: white;
+    color: black;
+}
+.darkt {
+    background-color: black;
+    color: #6C63FF;
+}
+.rest {
+    display: flex;
+    width: 100%;
+    height: 38px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1%;
+}
+select {
+    background-color: #6C63FF;
+    height: 38px;
+    width: 85px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: bold;
+    padding-left: 1%;
+
+  
+}
+#poisk::placeholder {
+    font-size: larger;
+    position: absolute;
+    left: 4%;
+    color: rgb(116, 116, 153);
+    
+}
+button {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6C63FF;
+    background-image: url("Vector.svg");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 7px 5px;
+}
+
+.poisks {
+ border: 1px,solid #6C63FF;
+    width: 599px;
+    height: 38px;
+    position: relative;
+        border-radius: 5px;
+    
+}
+.poisks img {
+   position: absolute;
+   left: 95%;
+   top: 19%;
+   
+}
+.pust {
+    height: 50px;
+    width: 100%;
+}
+.bigi {
+    display: flex;
+       flex-direction: column;
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    justify-content: flex-end;
+}
+.oi {
+  
+    display: flex;
+    height: 50px;
+    width:62%;
+justify-content: center;
+   position: relative;
+}
+hr {
+    width: 560px;
+    height: 0;
+    border: 1px solid #6C63FF;
+}
+.hre {
+display: flex;
+    height: 50px;
+    width: 90%;
+justify-content: center;
+}
+.note {
+    position: absolute;
+    top: -2%;
+    left: 42%; 
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #6C63FF;
+}
+.note:checked {
+    background-color: #6C63FF;
+    background-image: url("Rectangle\ 18.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: 1px 0px;
+
+
+}
+.note:checked ~ .text {
+    text-decoration: line-through;
+    color: gray;
+}
+.textovoy {
+    height: 300px;
+    width: 80%;
+    align-self: flex-end;
+    background-color: #6C63FF;
+
+}
+.bright {
+    background-color: white;
+    color: black;
+}
+.darkt {
+    background-color: black;
+    color: #6C63FF;
+}
