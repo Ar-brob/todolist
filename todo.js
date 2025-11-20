@@ -50,3 +50,13 @@ document.getElementById ('closer').addEventListener ('click', (ivive) =>{
 })
 
 
+const search_input = document.getElementById('poisk');
+search_input,addEventListener ("input" , () => {
+    let listnotes = document.querySelectorAll ("#note_list > label > span.text");
+    for (let i = 0; i < listnotes.length;i++) {
+         listnotes[i].parentElement.style.display = 'flex'
+        if (!listnotes[i].innerText.includes(search_input.value)) {
+            listnotes[i].parentElement.style.display = 'none'
+        }
+    }
+})
