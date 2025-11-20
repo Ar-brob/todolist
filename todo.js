@@ -50,6 +50,23 @@ document.getElementById ('closer').addEventListener ('click', (ivive) =>{
 })
 
 
+const notes = document.getElementById('poisk2');
+const note_list = document.getElementById('note_list');
+document.getElementById('add').addEventListener ('click', (evew) => {
+    evew.preventDefault();
+    const text_note = notes.value;
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'note';
+    const zas = document.createElement('label');
+    const new_note = document.createElement('span');
+    new_note.className = 'text';
+    new_note.innerHTML = text_note;
+    
+    note_list.appendChild(zas);
+    zas.appendChild(checkbox);
+    zas.appendChild(new_note);
+})
 const search_input = document.getElementById('poisk');
 search_input,addEventListener ("input" , () => {
     let listnotes = document.querySelectorAll ("#note_list > label > span.text");
@@ -57,6 +74,45 @@ search_input,addEventListener ("input" , () => {
          listnotes[i].parentElement.style.display = 'flex'
         if (!listnotes[i].innerText.includes(search_input.value)) {
             listnotes[i].parentElement.style.display = 'none'
+        }
+    }
+})
+
+const selectr = document.getElementById('pem')
+selectr.addEventListener('change', () => {
+    let label = document.querySelectorAll('#note_list > label' );
+    const sectr = selectr.selectedIndex;
+    for (let u = 0; u < label.length;u++){
+        label[u].style.display = 'flex';
+        let checkbox = label[u].childNodes[0];
+        if (sectr == 1 && checkbox.checked) {
+            label[u].style.display = 'none';
+        } else if (sectr == 2 && !checkbox.checked) {
+            label[u].style.display = 'none';
+        }
+    }
+})
+
+// const del = getElementByC('del').addEventListener ('click' , (e) => {
+//       e.target.closest('label').remove();
+// })
+// const edit = getElementById('edit').addEventListener ('click', (e) => {
+//     let temp = e.target.closest('label').childNodes[3]
+//     let attr = temp.getAttribute('type')
+//     temp.setAttribute('type', attr == 'text' ? 'hidden' : 'text');
+// })
+// hidden_input_text.addEventListener('change', (e) => {
+//     let news = e.target.value;
+//     console.log(news);
+//     e.target.closest('label').childNodes[2].innerText = news;
+//     e.target.closest('label').childNodes[3].setAttribute('type','hidden')
+//     e.target.closest('label').childNodes[3].value = news;
+// })
+document.addEventListener ('click', function (event) {
+    if (event.target.classList.contains('delete')) {
+        const note = event.target.closest('.note')
+        if (note) {
+            note.remove();
         }
     }
 })
