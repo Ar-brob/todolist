@@ -9,14 +9,7 @@ h1 {
     position: relative;
     
 }
-.bright {
-    background-color: white;
-    color: black;
-}
-.darkt {
-    background-color: black;
-    color: #6C63FF;
-}
+
 .rest {
     display: flex;
     width: 100%;
@@ -128,12 +121,4 @@ justify-content: center;
     align-self: flex-end;
     background-color: #6C63FF;
 
-}
-.bright {
-    background-color: white;
-    color: black;
-}
-.darkt {
-    background-color: black;
-    color: #6C63FF;
 }

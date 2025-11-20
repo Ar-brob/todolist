@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="todo.css">
+    <link rel="stylesheet" type="text/css" href="gig.css">
+ 
     <title>Document</title>
 </head>
-    <body  class="bright">
+
+<body  class="bright">
   <h1>TODO LIST</h1>
   <div class="rest">
-    <div class="poisks">
+    <div id="poisks">
         <form>
         <input type="text" name="poisk" id="poisk" placeholder="Search note..."> <img src="Vector1.svg"> </div> 
-        <select>
-            <option value="all">ВСЁ</option>
-            <option value="not_all"><p>НЕ ВСЁ</p></option>
+        <select class="opem" id="pem">
+            <option value="all" id="all">ВСЁ</option>
+            <option value="not_all" id="not_all"><p>АКТИВНЫЕ</p></option>
+            <option value="not_all" id="ended"><p>ЗАВЕРШЕННЫЕ</p></option>
         </select>
-        <button type="submit" id="klick"></button>
+        <button type="submit" id="klick" class="klick-day"></button>
         </form>
     </div>
     <div class="pust"></div>
-    <di v class="bigi">
-        <div class="oi">
-        <input type="checkbox" class="note" name="note">
-        <label for="note" class="text">ЗАПИСКА #1</label>
-        </div> 
-    <div class="hre"><hr></div>
-    <div class="oi">
-        <input type="checkbox" class="note" name="note">
-        <label for="note" class="text">ЗАПИСКА #2</label>
-    </div> 
-    <div class="hre"><hr></div>  
-    <div class="oi">
-    <input type="checkbox" class="note" name="note">
-    <label for="note" class="text">ЗАПИСКА #3</label>
-        </div></di>
-        <script src="todo.js"></script>
+    <div class="bigi">
+         <div id = "note_list">
+    </div>
+    </div>
+<div class="knop">
+    <button id ="open"></button>
+</div>
+  <div id="temo">
+    <div id="wind" class="white">
+        <div id ="nit" class="lightnit"> NEW NOTE</p>
+        <input type="text" name="poisk2" id="poisk2" placeholder="input your note..">
+             <button type="submit" id="closer">CANCEL</button>
+              <button type="submit" id="add">APPLY</button>
+             
+    </div>
+  </div>
+  </div>
+</div>
+<div id="del" class="delS">
+   <button id="dele"></button>
+</div>
 </body>
+<script src="gigr.js"></script>
 </html>
