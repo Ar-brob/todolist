@@ -27,6 +27,8 @@ document.getElementById('klick') .addEventListener ('click', (event) => {
         closer.classList = 'closedark'
        klick.classList = 'klick-night'
 
+
+
      
      
 
@@ -36,6 +38,7 @@ document.getElementById('klick') .addEventListener ('click', (event) => {
              closer.classList = 'whiteclose'
              nit.classList = 'lightnit'
               klick.classList = 'klick-day'
+            
     }
 })
 document.getElementById ('open').addEventListener ('click', (iviv) =>{
@@ -54,6 +57,8 @@ const notes = document.getElementById('poisk2');
 const note_list = document.getElementById('note_list');
 document.getElementById('add').addEventListener ('click', (evew) => {
     evew.preventDefault();
+    const buts = document.createElement('div')
+    buts.className = 'buts';
     const text_note = notes.value;
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
@@ -62,10 +67,18 @@ document.getElementById('add').addEventListener ('click', (evew) => {
     const new_note = document.createElement('span');
     new_note.className = 'text';
     new_note.innerHTML = text_note;
-    
+    const redakt = document.createElement('button')
+    redakt.className = 'pen'
+    const deletes = document.createElement('button')
+    deletes.className = 'deletes'
+    if (notes.value.trim() !== ''){
     note_list.appendChild(zas);
     zas.appendChild(checkbox);
     zas.appendChild(new_note);
+    zas.appendChild(buts)
+    buts.appendChild(redakt)
+      buts.appendChild(deletes)
+    }
 })
 const search_input = document.getElementById('poisk');
 search_input,addEventListener ("input" , () => {
@@ -93,26 +106,49 @@ selectr.addEventListener('change', () => {
     }
 })
 
-// const del = getElementByC('del').addEventListener ('click' , (e) => {
-//       e.target.closest('label').remove();
-// })
-// const edit = getElementById('edit').addEventListener ('click', (e) => {
-//     let temp = e.target.closest('label').childNodes[3]
-//     let attr = temp.getAttribute('type')
-//     temp.setAttribute('type', attr == 'text' ? 'hidden' : 'text');
-// })
-// hidden_input_text.addEventListener('change', (e) => {
-//     let news = e.target.value;
-//     console.log(news);
-//     e.target.closest('label').childNodes[2].innerText = news;
-//     e.target.closest('label').childNodes[3].setAttribute('type','hidden')
-//     e.target.closest('label').childNodes[3].value = news;
-// })
-document.addEventListener ('click', function (event) {
-    if (event.target.classList.contains('delete')) {
-        const note = event.target.closest('.note')
-        if (note) {
-            note.remove();
-        }
+
+document.getElementById('redact').addEventListener('click', function() {
+    let note_redact = document.getElementById('poisk3');
+    let new_note = note_redact.value;
+    
+    if (new_note != '' && currentEditingLabel !== null) {
+        currentEditingLabel.childNodes[1].textContent = new_note;
+        document.getElementById('temeo').style.display = 'none';
+        document.getElementById('wind2').style.display = 'none';
+        currentEditingLabel = null;
     }
-})
+});
+
+document.getElementById('closesar').addEventListener('click', function() {
+    document.getElementById('temeo').style.display = 'none';
+    document.getElementById('wind2').style.display = 'none';
+    currentEditingLabel = null;
+});
+
+let currentEditingLabel = null;
+
+note_list.addEventListener('mouseover', () => {
+    let buts = document.querySelectorAll('#note_list > label > .buts');
+    let label = document.querySelectorAll('#note_list > label');
+    
+    for (let i = 0; i < buts.length; i++) {
+        let deletesBtn = buts[i].childNodes[1];
+        let redaktBtn = buts[i].childNodes[0];
+        
+        deletesBtn.addEventListener('click', () => {
+            buts[i].parentElement.remove();
+        });
+
+        redaktBtn.addEventListener('click', () => {
+            let redakt_note = document.getElementById('wind2');
+            let note_redact = document.getElementById('poisk3');
+            
+            redakt_note.style.display = 'flex';
+            temeo.style.display = 'block';
+            note_redact.value = label[i].childNodes[1].textContent;
+            
+       
+            currentEditingLabel = label[i];
+        });
+    } 
+});
